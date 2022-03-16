@@ -22,7 +22,8 @@ category_info = {'none': 0, 'camera':1, 'garage':2, 'car':3, 'shrine':4,
                  'garden':5}
 
 class Voc07Dataset(torch.utils.data.Dataset):
-    def __init__(self, df, img_dir='./data/VOCdevkit/VOC2007/JPEGImages', anno_path='./data/VOCdevkit/VOC2007/Main/trainval.txt', image_transform=None, labels_path='./data/VOCdevkit/VOC2007/Annotations',known_labels=0,testing=False,use_difficult=False):
+    def __init__(self, img_dir='./train', anno_path='./train/train.csv', image_transform=None, labels_path='./data/VOCdevkit/VOC2007/Annotations',known_labels=0,testing=False,use_difficult=False):
+        df  = pd.read_csv(anno_path')
         self.img_names  = []
 #         with open(anno_path, 'r') as f:
 #              self.img_names = f.readlines()
