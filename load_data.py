@@ -123,7 +123,7 @@ def get_data(args):
     
     elif dataset=='voc':
 #         voc_root = os.path.join(data_root,'voc/VOCdevkit/VOC2007/')
-        voc_root = os.path.join('./')
+        voc_root = os.path.join('./Task2')
         img_dir = os.path.join(voc_root,'train')
         anno_dir = os.path.join(voc_root,'Annotations')
         train_anno_path = os.path.join(voc_root,'train.csv')
