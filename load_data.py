@@ -122,11 +122,12 @@ def get_data(args):
         valid_dataset = NewsDataset(ann_dir, split = 'test', transform = testTransform,known_labels=args.test_known_labels,testing=True)
     
     elif dataset=='voc':
-        voc_root = os.path.join(data_root,'voc/VOCdevkit/VOC2007/')
-        img_dir = os.path.join(voc_root,'JPEGImages')
+#         voc_root = os.path.join(data_root,'voc/VOCdevkit/VOC2007/')
+        voc_root = os.path.join('./')
+        img_dir = os.path.join(voc_root,'train')
         anno_dir = os.path.join(voc_root,'Annotations')
-        train_anno_path = os.path.join(voc_root,'ImageSets/Main/trainval.txt')
-        test_anno_path = os.path.join(voc_root,'ImageSets/Main/test.txt')
+        train_anno_path = os.path.join(voc_root,'train.csv')
+        test_anno_path = os.path.join(voc_root,'test.csv')
 
         train_dataset = Voc07Dataset(
             img_dir=img_dir,
