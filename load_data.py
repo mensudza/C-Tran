@@ -128,6 +128,7 @@ def get_data(args):
         anno_dir = os.path.join(voc_root,'Annotations')
         train_anno_path = os.path.join(voc_root,'train.csv')
         test_anno_path = os.path.join(voc_root,'test.csv')
+        submission_anno_path = os.path.join(voc_root, 'submission.csv')
 
         train_dataset = Voc07Dataset(
             img_dir=img_dir,
@@ -144,6 +145,15 @@ def get_data(args):
             labels_path=anno_dir,
             known_labels=args.test_known_labels,
             testing=True)
+        test_dataset = Voc07Dataset(
+            img_dir=img_dir,
+            anno_path=submission_anno_path,
+            image_transform=testTransform,
+            labels_path=anno_dir,
+            known_labels=args.test_known_labels,
+            testing=True)
+        
+        
 
     elif dataset == 'cub':
         drop_last=True
